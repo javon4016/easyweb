@@ -218,12 +218,27 @@ pnpm install -r
 ```bash
 # 启动后端开发服务器
 pnpm --filter backend dev
+# 如果以上命令失败
+cd packages/backend
+pnpm dev
 
 # 启动前端开发服务器
 pnpm --filter frontend dev
+# 如果以上命令失败
+cd packages/frontend
+pnpm dev
 ```
+启动成功后：
+前端通常会运行在 http://localhost:5173（具体地址会在命令行显示）
+后端通常会运行在 http://localhost:3000
 
-### 生产构建
+### 首次登录系统
+打开浏览器，访问前端地址（通常是 http://localhost:5173）
+使用默认管理员账号登录：
+用户名：admin
+密码：admin123
+
+### 生产构建（可选）
 ```bash
 # 构建前端
 pnpm --filter frontend build
